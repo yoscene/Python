@@ -1,0 +1,23 @@
+#Umport required module
+import datetime
+try:
+#get user input
+    usr_inp=input("Enter your Goal & Target: 'Goal[e.g. learn python]:Target[xx.xx.xxxx]'")
+
+    #separating string & date
+    spl_val=usr_inp.split(":")
+
+    #storing in multiple variables
+    goal=spl_val[0]
+    date=spl_val[1]
+
+    #calculation of deadline
+    till_time=datetime.datetime.strptime(date, "%d.%m.%Y")
+    today_time=datetime.datetime.today()
+    deadline=today_time-till_time
+
+    #output
+    print(f"Your target of '{goal}' will be completed in {deadline} hours ")
+
+except:
+    print("User input error!")
